@@ -63,7 +63,9 @@ struct ContentView: View {
                 Section("Total Amount") {
  let totalTip = Double(tipPercentage) / 100
                     Text("Total \(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD")) + \(totalTip * checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))  ")
+                        .foregroundStyle(tipPercentage == 0 ? .red : .black)
                 }
+                
                 
             }.navigationTitle("We Split")
                 .toolbar{
